@@ -8,7 +8,7 @@ class TestSong(unittest.TestCase):
     # - This test determines that a song exists by comparing the object self.song with attribute "name" to the value of "Beautiful Day by U2"
 
     # - self.song.name reads as self.song -> the song object from classes.song and .name is the attribute of the song as defined in the Song class
-    
-    def test_has_song_name(self):
+
+    def test_song_has_name(self):
         self.assertEqual(self.song.name, "Beautiful Day by U2")
 
