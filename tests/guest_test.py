@@ -1,5 +1,5 @@
 import unittest
-from classes.guest import Guest
+#from classes.guest import Guest
 
 class TestGuest(unittest.TestCase):
     def setUp(self):

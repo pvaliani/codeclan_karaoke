@@ -1,5 +1,5 @@
 import unittest
-from classes.room import Room
+#from classes.room import Room
 
 class TestRoom(unittest.TestCase):
     def setUp(self):
