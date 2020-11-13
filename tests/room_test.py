@@ -15,5 +15,8 @@ class TestRoom(unittest.TestCase):
 
     def test_room_has_song(self):
         self.assertEqual(self.room.song_in_room, "Beautiful Day by U2")
+
+    def test_room_has_guest(self):
+        self.assertEqual(self.room.guests_in_room, "Pedram Valiani")
         
 
