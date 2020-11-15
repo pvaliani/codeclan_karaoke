@@ -1,9 +1,14 @@
 import unittest
 from classes.room import Room
+from classes.guest import Guest
+from classes.song import Song
 
 class TestRoom(unittest.TestCase):
     def setUp(self):
-        self.room = Room("Room 1", "Beautiful Day by U2", "Pedram Valiani", 45, "Wild West")
+        self.room = Room("Room 1", 45, "Wild West")
+        self.guest_1 = Guest("Michael Jackson", 50)
+        self.guest_2 = Guest("50 Cent", 150)
+
     
     # - This test determines that a room name exists by comparing the object self.room with attribute "name" to the value of "Room 1"
 
@@ -12,15 +17,12 @@ class TestRoom(unittest.TestCase):
     def test_room_has_name(self):
         self.assertEqual(self.room.name, "Room 1")
 
-    # - This test checks that the room has a song by comparing the self.room instance object with the 2nd parameter of the room instance
 
-    def test_room_has_song(self):
-        self.assertEqual(self.room.song_in_room, "Beautiful Day by U2")
+    def test_room_has__no_song_in_playlist(self):
+        self.assertEqual(self.room.songs_in_room, [])
 
-    # - This test checks that the room has a guest by comparing the self.guest instance object with the 3rd parameter of the room instance
-
-    def test_room_has_guest_checked_in(self):
-        self.assertEqual(self.room.guests, "Pedram Valiani")
+    def test_room_has_no_guests_checked_in(self):
+        self.assertEqual(self.room.guests, [])
 
     # def test_room_doesnt_have_guest_checked_out(self):
     #     self.assertEqual(check_out_guest(self, guest_name), "")
@@ -30,5 +32,10 @@ class TestRoom(unittest.TestCase):
 
     def test_room_has_theme(self):
         self.assertEqual(self.room.room_theme, "Wild West")
+
+    def test_room_has__song_in_playlist(self):
+        self.song_1 = Song("My Plague", "Slipknot")
+        self.assertEqual(self.song_1.name, "My Plague")
+
         
 
