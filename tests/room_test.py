@@ -45,13 +45,19 @@ class TestRoom(unittest.TestCase):
         self.assertEqual(self.song_1.name, "My Plague")
 
     # - Check the length of the playlist in the room
-    
+
     def test_length_of_playlist_in_room(self):
         self.room.add_song_to_room_playlist(self.song_1)
         self.room.add_song_to_room_playlist(self.song_2)
         self.room.add_song_to_room_playlist(self.song_3)
         length = self.room.get_song_list_length()
         self.assertEqual(3, length)
+    
+
+    # - Check if the room has been emptied
+
+    def test_check_room_is_clear(self):
+        self.assertEqual(self.room.empty_room(), None)
 
 
 

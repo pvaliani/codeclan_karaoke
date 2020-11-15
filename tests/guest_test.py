@@ -27,14 +27,10 @@ class TestGuest(unittest.TestCase):
         self.assertEqual(47, self.guest.wallet)
 
     # - Check whether a guest can afford to enter the room at the bar
-    
+
     def test_customer_can_afford_entry_to_room(self):
         self.assertTrue(self.guest.customer_can_afford_entry(self.room_1))
 
-    # - Check whether a guest cannot afford to enter the room at the bar
-
-    def test_customer_cannot_afford_entry_to_room(self):
-        self.assertFalse(self.guest.customer_can_afford_entry(self.room_1))
 
 
 

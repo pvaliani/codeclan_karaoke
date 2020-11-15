@@ -21,6 +21,11 @@ class Room:
 
     def check_out_guest(self, guest_name):
         self.guests.remove(guest_name)
+        
+    # - Method clears guests from the list 
+
+    def empty_room(self):
+        self.guests.clear()
 
     # - Method adds a song by its full title - i.e artist and genre, to the playlist
 
@@ -31,6 +36,9 @@ class Room:
 
     def get_song_list_length(self):
         return len(self.songs_in_room)
+
+
+    
 
 
 
