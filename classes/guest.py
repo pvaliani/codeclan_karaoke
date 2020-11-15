@@ -1,4 +1,7 @@
 class Guest:
+
+    # - Constructor - defines a guest by their name and wallet value 
+    
     def __init__(self, name, wallet):
         self.name = name
         self.wallet = wallet
