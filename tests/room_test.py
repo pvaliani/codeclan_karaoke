@@ -8,6 +8,9 @@ class TestRoom(unittest.TestCase):
         self.room = Room("Room 1", 45, "Wild West")
         self.guest_1 = Guest("Michael Jackson", 50)
         self.guest_2 = Guest("50 Cent", 150)
+        self.song_1 = Song("Beautiful Day", "U2")
+        self.song_2 = Song("Bunsen", "Frontierer")
+        self.song_3 = Song("Axe To Fall", "Converge")
 
     
     # - This test determines that a room name exists by comparing the object self.room with attribute "name" to the value of "Room 1"
@@ -36,6 +39,15 @@ class TestRoom(unittest.TestCase):
     def test_room_has__song_in_playlist(self):
         self.song_1 = Song("My Plague", "Slipknot")
         self.assertEqual(self.song_1.name, "My Plague")
+
+    def test_length_of_playlist_in_room(self):
+        self.room.add_song_to_room_playlist(self.song_1)
+        self.room.add_song_to_room_playlist(self.song_2)
+        self.room.add_song_to_room_playlist(self.song_3)
+        length = self.room.get_song_list_length()
+        self.assertEqual(3, length)
+
+
 
         
 

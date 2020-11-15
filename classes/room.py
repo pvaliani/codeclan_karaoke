@@ -19,5 +19,8 @@ class Room:
     def add_song_to_room_playlist(self, song_name):
         self.songs_in_room.append(song_name)
 
+    def get_song_list_length(self):
+        return len(self.songs_in_room)
+
 
 
