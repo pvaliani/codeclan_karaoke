@@ -33,10 +33,14 @@ class TestRoom(unittest.TestCase):
     def test_room_has_price(self):
         self.assertEqual(self.room.price, 45)
 
+    # - Check that the room theme is "Wild West"
+
     def test_room_has_theme(self):
         self.assertEqual(self.room.room_theme, "Wild West")
 
-    def test_room_has__song_in_playlist(self):
+    # - Check that the room has a song in the playlist cue
+
+    def test_room_has_song_in_playlist(self):
         self.song_1 = Song("My Plague", "Slipknot")
         self.assertEqual(self.song_1.name, "My Plague")
 

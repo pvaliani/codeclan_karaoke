@@ -12,10 +12,12 @@ class TestGuest(unittest.TestCase):
     def test_guest_has_name(self):
         self.assertEqual(self.guest.name, "Pedram Valiani")
     
-    # - check that the guests wallet has money 
+    # - Check that the guest has money in their wallet to pay a bill
 
     def test_guest_has_wallet_money(self):
         self.assertEqual(self.guest.wallet, 50)
+
+    # - Check that a guest can pay a bill - use the entry as an example
 
     def test_customer_can_afford_entry(self):
         self.guest.pay_the_bill(3)
