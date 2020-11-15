@@ -3,7 +3,7 @@ from classes.guest import Guest
 
 class TestGuest(unittest.TestCase):
     def setUp(self):
-        self.guest = Guest("Pedram Valiani")
+        self.guest = Guest("Pedram Valiani", 50)
 
     # - This test determines that a song exists by comparing the object self.guest with attribute "name" to the value of "Pedram Valiani"
 
@@ -11,4 +11,9 @@ class TestGuest(unittest.TestCase):
     
     def test_guest_has_name(self):
         self.assertEqual(self.guest.name, "Pedram Valiani")
+    
+    # - check that the guests wallet has money 
+
+    def test_guest_has_wallet_money(self):
+        self.assertEqual(self.guest.wallet, 50)
 

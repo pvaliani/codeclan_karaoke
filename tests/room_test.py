@@ -3,7 +3,7 @@ from classes.room import Room
 
 class TestRoom(unittest.TestCase):
     def setUp(self):
-        self.room = Room("Room 1", "Beautiful Day by U2", "Pedram Valiani")
+        self.room = Room("Room 1", "Beautiful Day by U2", "Pedram Valiani", 45, "Wild West")
     
     # - This test determines that a room name exists by comparing the object self.room with attribute "name" to the value of "Room 1"
 
@@ -19,7 +19,16 @@ class TestRoom(unittest.TestCase):
 
     # - This test checks that the room has a guest by comparing the self.guest instance object with the 3rd parameter of the room instance
 
-    def test_room_has_guest(self):
-        self.assertEqual(self.room.guests_in_room, "Pedram Valiani")
+    def test_room_has_guest_checked_in(self):
+        self.assertEqual(self.room.guests, "Pedram Valiani")
+
+    # def test_room_doesnt_have_guest_checked_out(self):
+    #     self.assertEqual(check_out_guest(self, guest_name), "")
+
+    def test_room_has_price(self):
+        self.assertEqual(self.room.price, 45)
+
+    def test_room_has_theme(self):
+        self.assertEqual(self.room.room_theme, "Wild West")
         
 
