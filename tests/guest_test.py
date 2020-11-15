@@ -1,9 +1,12 @@
 import unittest
 from classes.guest import Guest
+from classes.room import Room
+from classes.song import Song
 
 class TestGuest(unittest.TestCase):
     def setUp(self):
         self.guest = Guest("Pedram Valiani", 50)
+        self.room_1 = Room("Room 1", 40, "Outer Space")
 
     # - This test determines that a song exists by comparing the object self.guest with attribute "name" to the value of "Pedram Valiani"
 
@@ -22,6 +25,17 @@ class TestGuest(unittest.TestCase):
     def test_customer_can_afford_entry(self):
         self.guest.pay_the_bill(3)
         self.assertEqual(47, self.guest.wallet)
+
+    # - Check whether a guest can afford to enter the room at the bar
+    
+    def test_customer_can_afford_entry_to_room(self):
+        self.assertTrue(self.guest.customer_can_afford_entry(self.room_1))
+
+    # - Check whether a guest cannot afford to enter the room at the bar
+
+    def test_customer_cannot_afford_entry_to_room(self):
+        self.assertFalse(self.guest.customer_can_afford_entry(self.room_1))
+
 
 
 

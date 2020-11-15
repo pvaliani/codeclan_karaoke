@@ -10,6 +10,7 @@ class TestSong(unittest.TestCase):
     # - self.song.name reads as self.song -> the song object from classes.song and .name is the attribute of the song as defined in the Song class
     
     # - Check that the song has a title
+    
     def test_song_has_name(self):
         self.assertEqual(self.song.name, "Beautiful Day")
 
