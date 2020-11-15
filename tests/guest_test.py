@@ -7,6 +7,7 @@ class TestGuest(unittest.TestCase):
     def setUp(self):
         self.guest = Guest("Pedram Valiani", 50)
         self.room_1 = Room("Room 1", 40, "Outer Space")
+        self.favourite_song_1 = Song("Noctourniquet" , "The Mars Volta")
 
     # - This test determines that a song exists by comparing the object self.guest with attribute "name" to the value of "Pedram Valiani"
 
@@ -30,6 +31,8 @@ class TestGuest(unittest.TestCase):
 
     def test_customer_can_afford_entry_to_room(self):
         self.assertTrue(self.guest.customer_can_afford_entry(self.room_1))
+
+   
 
 
 
